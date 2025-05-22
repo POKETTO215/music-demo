@@ -176,3 +176,19 @@ function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   initLetters();
 }
+
+function touchStarted() {
+  // 激活音频上下文（iOS必须）
+  userStartAudio();
+  if (bgMusic && !bgMusic.isPlaying()) {
+    bgMusic.loop();
+  }
+}
+
+function mousePressed() {
+  userStartAudio();
+  if (bgMusic && !bgMusic.isPlaying()) {
+    bgMusic.loop();
+  }
+}
+
